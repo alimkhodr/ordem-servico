@@ -8,6 +8,7 @@ Public Class Relatorio
 
     Private Sub Relatorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Consulta()
+        PreencherCaixas()
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         txt_op.Items.Clear()
         txt_op.Items.Add("MP")
@@ -190,6 +191,32 @@ Public Class Relatorio
         End If
     End Sub
 
+    Sub PreencherCaixas()
+        Try
+            DataGridViewCaixa.Columns.Clear()
+            DataGridViewCaixa.Columns.Add("CAIXA", "CAIXA")
+            DataGridViewCaixa.Columns.Add("OS", "OS")
+
+            conectar()
+            comandoSQL.CommandText = "select os_caixa,os_id,os_ferramenta from TAB_OS_RELATORIO where os_caixa is not null and ('" & TextBox1.Text & "' = '' OR (os_caixa = '" & TextBox1.Text & "' or os_id = '" & TextBox1.Text & "')) order by os_caixa"
+            objDataReader = comandoSQL.ExecuteReader
+            DataGridViewCaixa.Rows.Clear()
+            If objDataReader.HasRows Then
+                While objDataReader.Read()
+                    Dim row As String() = New String() {
+                    objDataReader("os_caixa").ToString(),
+                    objDataReader("os_id").ToString()
+                    }
+                    DataGridViewCaixa.Rows.Add(row)
+                End While
+            End If
+            objDataReader.Close()
+            desconectar()
+        Catch ex As Exception
+            MessageBox.Show("Ocorreu um erro: " & ex.Message)
+        End Try
+    End Sub
+
     Private Sub txt_op_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_op.SelectedIndexChanged
         Consulta()
     End Sub
@@ -209,7 +236,6 @@ Public Class Relatorio
             Consulta()
         End If
     End Sub
-
 
     Private Sub ExportToExcel()
         If Lista_OS.Items.Count = 0 Then
@@ -355,5 +381,9 @@ Public Class Relatorio
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
         WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        PreencherCaixas()
     End Sub
 End Class

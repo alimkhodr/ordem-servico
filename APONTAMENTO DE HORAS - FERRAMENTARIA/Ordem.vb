@@ -55,6 +55,11 @@ Public Class Ordem
             situacao = "EM ANDAMENTO"
         End If
 
+        If Not String.IsNullOrEmpty(txt_caixa.Text) Then
+            If Not Verifica_Caixa() Then Return
+        End If
+
+
         If id_OS = 0 Then
             Try
                 conectar()
@@ -112,7 +117,7 @@ Public Class Ordem
                     conectar()
                     comandoSQL.CommandText = "UPDATE TAB_OS_RELATORIO SET OS_FERRAMENTA = '" & txt_fer.Text & "', OS_POSICAO = '" & txt_pos.Text & "', OS_DESCRICAO = '" & txt_desc.Text & "', OS_PROJETO = '" & txt_projeto.Text & "', "
                     comandoSQL.CommandText &= "OS_DATA_ENTREGA = '" & txt_dt_ent.Text & "', OS_UNIDADE = '" & txt_uni.Text & "', OS_TIPO = '" & txt_tp.Text & "',  OS_MOTIVO = '" & txt_motivo.Text & "', OS_QUANTIDADE = '" & txt_qtd.Text & "', "
-                    comandoSQL.CommandText &= "OS_CONTA = '" & txt_conta.Text & "', OS_SUB_CONTA = '" & txt_sub_conta.Text & "', OS_SECAO = '" & txt_secao.Text & "', OS_REG_RESPONSAVEL= '" & REGISTRO & "', OS_SITUACAO = '" & txt_situ.Text & "', OS_AGUARDANDO = '" & txt_aguardando.Text & "'"
+                    comandoSQL.CommandText &= "OS_CONTA = '" & txt_conta.Text & "', OS_SUB_CONTA = '" & txt_sub_conta.Text & "', OS_SECAO = '" & txt_secao.Text & "', OS_REG_RESPONSAVEL= '" & REGISTRO & "', OS_SITUACAO = '" & situacao & "', OS_AGUARDANDO = '" & txt_aguardando.Text & "'"
                     If String.IsNullOrEmpty(txt_caixa.Text) Then
                         comandoSQL.CommandText &= ", OS_CAIXA = NULL "
                     Else
@@ -134,6 +139,19 @@ Public Class Ordem
         End If
         Lista_Req()
     End Sub
+
+    Function Verifica_Caixa() As Boolean
+        conectar()
+        comandoSQL.CommandText = "SELECT * FROM TAB_OS_RELATORIO WHERE OS_CAIXA = " & txt_caixa.Text
+        objDataReader = comandoSQL.ExecuteReader
+        If objDataReader.Read Then
+            MessageBox.Show("Esta caixa ja está em uso pela ordem " & objDataReader("OS_ID"))
+            Return False
+        Else
+            Return True
+        End If
+        desconectar()
+    End Function
 
     Sub Preencher_cbo()
         conectar()

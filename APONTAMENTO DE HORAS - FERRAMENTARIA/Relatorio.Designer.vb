@@ -25,6 +25,9 @@ Partial Class Relatorio
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Relatorio))
         Me.txt_fer = New System.Windows.Forms.TextBox()
         Me.Lista_OS = New System.Windows.Forms.ListView()
@@ -54,9 +57,13 @@ Partial Class Relatorio
         Me.btn_excel = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridViewCaixa = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewCaixa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_fer
@@ -80,10 +87,10 @@ Partial Class Relatorio
         Me.Lista_OS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.Lista_OS.FullRowSelect = True
         Me.Lista_OS.GridLines = True
-        Me.Lista_OS.Location = New System.Drawing.Point(292, 121)
+        Me.Lista_OS.Location = New System.Drawing.Point(270, 121)
         Me.Lista_OS.MultiSelect = False
         Me.Lista_OS.Name = "Lista_OS"
-        Me.Lista_OS.Size = New System.Drawing.Size(753, 428)
+        Me.Lista_OS.Size = New System.Drawing.Size(615, 439)
         Me.Lista_OS.TabIndex = 69
         Me.Lista_OS.UseCompatibleStateImageBehavior = False
         Me.Lista_OS.View = System.Windows.Forms.View.Details
@@ -186,7 +193,7 @@ Partial Class Relatorio
         Me.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_limpar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btn_limpar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btn_limpar.Location = New System.Drawing.Point(47, 510)
+        Me.btn_limpar.Location = New System.Drawing.Point(47, 521)
         Me.btn_limpar.Name = "btn_limpar"
         Me.btn_limpar.Size = New System.Drawing.Size(93, 39)
         Me.btn_limpar.TabIndex = 10
@@ -413,7 +420,7 @@ Partial Class Relatorio
         Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(289, 97)
+        Me.Label1.Location = New System.Drawing.Point(267, 97)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 99
@@ -423,7 +430,7 @@ Partial Class Relatorio
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox1.Image = Global.Ordem_de_Servico.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(451, 568)
+        Me.PictureBox1.Location = New System.Drawing.Point(451, 590)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(192, 23)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -442,7 +449,7 @@ Partial Class Relatorio
         Me.btn_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_excel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_excel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btn_excel.Location = New System.Drawing.Point(152, 510)
+        Me.btn_excel.Location = New System.Drawing.Point(152, 521)
         Me.btn_excel.Name = "btn_excel"
         Me.btn_excel.Size = New System.Drawing.Size(93, 39)
         Me.btn_excel.TabIndex = 11
@@ -476,7 +483,7 @@ Partial Class Relatorio
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace
-        Me.DataGridView1.Location = New System.Drawing.Point(46, 347)
+        Me.DataGridView1.Location = New System.Drawing.Point(46, 345)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -491,7 +498,7 @@ Partial Class Relatorio
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(199, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(199, 162)
         Me.DataGridView1.TabIndex = 102
         '
         'Label3
@@ -506,6 +513,75 @@ Partial Class Relatorio
         Me.Label3.TabIndex = 74
         Me.Label3.Text = "Início Apont."
         '
+        'DataGridViewCaixa
+        '
+        Me.DataGridViewCaixa.AllowUserToAddRows = False
+        Me.DataGridViewCaixa.AllowUserToDeleteRows = False
+        Me.DataGridViewCaixa.AllowUserToOrderColumns = True
+        Me.DataGridViewCaixa.AllowUserToResizeColumns = False
+        Me.DataGridViewCaixa.AllowUserToResizeRows = False
+        Me.DataGridViewCaixa.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DataGridViewCaixa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridViewCaixa.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewCaixa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewCaixa.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewCaixa.GridColor = System.Drawing.SystemColors.ButtonFace
+        Me.DataGridViewCaixa.Location = New System.Drawing.Point(906, 157)
+        Me.DataGridViewCaixa.MultiSelect = False
+        Me.DataGridViewCaixa.Name = "DataGridViewCaixa"
+        Me.DataGridViewCaixa.ReadOnly = True
+        Me.DataGridViewCaixa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewCaixa.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewCaixa.RowHeadersVisible = False
+        Me.DataGridViewCaixa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridViewCaixa.Size = New System.Drawing.Size(146, 403)
+        Me.DataGridViewCaixa.TabIndex = 103
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label4.Location = New System.Drawing.Point(903, 97)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 18)
+        Me.Label4.TabIndex = 104
+        Me.Label4.Text = "Caixa"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Font = New System.Drawing.Font("Arial Narrow", 14.0!)
+        Me.TextBox1.Location = New System.Drawing.Point(906, 121)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(6)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(146, 29)
+        Me.TextBox1.TabIndex = 105
+        '
         'Relatorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -513,6 +589,9 @@ Partial Class Relatorio
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(1089, 643)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.DataGridViewCaixa)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
@@ -542,6 +621,7 @@ Partial Class Relatorio
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewCaixa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -575,4 +655,7 @@ Partial Class Relatorio
     Friend WithEvents btn_fechar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label3 As Label
+    Friend WithEvents DataGridViewCaixa As DataGridView
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

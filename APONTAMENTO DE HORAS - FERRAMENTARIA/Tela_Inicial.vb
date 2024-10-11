@@ -190,7 +190,7 @@
                     If objDataReader("OS_SITUACAO").ToString() = "EM REQUISIÇÃO" Then
                         Ordem.txt_externo.Text = "SIM"
                         Ordem.Panel2.Enabled = True
-                        Ordem.Lista_Request.Visible = True
+                        Ordem.Lista_Request.Visible = False
                         Ordem.btn_salvar.Text = "SALVAR"
                     End If
 
