@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/aptivjam/ordem-servico/refs/heads/main/APONTAMENTO%20DE%20HORAS%20-%20FERRAMENTARIA/OrdemServico.ico?token=GHSAT0AAAAAACX6QZTO43Y32YZK3NVBMU5AZZDNCUQ" width="20%"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/6e5de9e9-5e4e-45c9-b7d2-082fdfec102c" width="20%"></p>
 <p align="center">Sistema de Ordem de Serviço</p>
 
 ## Clonando o Repositório
