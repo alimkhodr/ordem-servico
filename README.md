@@ -1,5 +1,5 @@
 <p align="center"><img src="https://raw.githubusercontent.com/aptivjam/ordem-servico/refs/heads/main/APONTAMENTO%20DE%20HORAS%20-%20FERRAMENTARIA/OrdemServico.ico?token=GHSAT0AAAAAACX6QZTO43Y32YZK3NVBMU5AZZDNCUQ" width="20%"></p>
-<p align="center">Sistema de Contenção</p>
+<p align="center">Sistema de Ordem de Serviço</p>
 
 ## Clonando o Repositório
 Clone este repositório usando o comando:
